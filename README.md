@@ -36,8 +36,6 @@ O dataset apresenta um desbalanceamento natural, com mais clientes retidos ("No"
 ### 2. Correlação de Variáveis
 Investigou-se como variáveis numéricas (como cobrança mensal e tempo de contrato) se relacionam com o cancelamento.
 
-![Matriz de Correlação](assets/correlation_matrix.png)
-
 **Principais Insights:**
 * Clientes com **contratos mensais** têm maior taxa de cancelamento.
 * Clientes novos (baixo `tenure`) são mais propensos ao churn.
