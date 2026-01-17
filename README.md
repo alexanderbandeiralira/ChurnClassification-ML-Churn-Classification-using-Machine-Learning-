@@ -5,100 +5,100 @@
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas)
 ![Seaborn](https://img.shields.io/badge/Seaborn-Analysis-green?style=for-the-badge)
 
-## 📌 Visão Geral
+## 📌 Overview
 
-Este projeto tem como objetivo desenvolver um modelo de Machine Learning capaz de prever o **Churn (cancelamento)** de clientes de uma empresa de telecomunicações.
+This project aims to develop a Machine Learning model capable of predicting **Churn (cancellation)** for customers of a telecommunications company.
 
-Identificar clientes com alta probabilidade de cancelamento permite que a empresa adote ações preventivas de retenção, reduzindo perdas financeiras e aumentando a satisfação do cliente.
+Identifying customers with a high probability of cancellation allows the company to take preventive retention actions, reducing financial losses and increasing customer satisfaction.
 
 ---
 
-## 🗂️ O Dataset
+## 🗂️ The Dataset
 
-Foi utilizado o conjunto de dados **Telco Customer Churn**, contendo informações sobre:
-* **Demografia:** Gênero, Idosos, Parceiros, Dependentes.
-* **Serviços:** Telefone, Internet (DSL/Fibra), Segurança Online, Backup, Streaming, etc.
-* **Conta:** Tipo de contrato, Método de pagamento, Faturamento digital.
-* **Métricas:** `Tenure` (tempo de permanência), `MonthlyCharges` (cobrança mensal), `TotalCharges`.
+The **Telco Customer Churn** dataset was used, containing information about:
+* **Demographics:** Gender, Seniors, Partners, Dependents.
+* **Services:** Phone, Internet (DSL/Fiber optic), Online Security, Backup, Streaming, etc.
+* **Account:** Contract type, Payment method, Paperless billing.
+* **Metrics:** `Tenure` (months with the company), `MonthlyCharges`, `TotalCharges`.
 * **Target:** `Churn` (Yes/No).
 
 ---
 
-## 📊 Análise Exploratória (EDA)
+## 📊 Exploratory Data Analysis (EDA)
 
-A análise inicial revelou padrões importantes no comportamento dos clientes.
+The initial analysis revealed important patterns in customer behavior.
 
-### 1. Desbalanceamento de Classes
-O dataset apresenta um desbalanceamento natural, com mais clientes retidos ("No") do que cancelados ("Yes").
+### 1. Class Imbalance
+The dataset presents a natural imbalance, with more retained customers ("No") than cancelled ones ("Yes").
 
-![Distribuição de Churn](assets/churn_distribution.png)
+![Churn Distribution](assets/churn_distribution.png)
 
-### 2. Correlação de Variáveis
-Investigou-se como variáveis numéricas (como cobrança mensal e tempo de contrato) se relacionam com o cancelamento.
+### 2. Feature Correlation
+We investigated how numerical variables (such as monthly charges and tenure) relate to cancellation.
 
-**Principais Insights:**
-* Clientes com **contratos mensais** têm maior taxa de cancelamento.
-* Clientes novos (baixo `tenure`) são mais propensos ao churn.
-* Usuários de **Fibra Óptica** apresentam taxas de churn mais elevadas que usuários de DSL.
+**Key Insights:**
+* Customers with **month-to-month contracts** have a higher cancellation rate.
+* New customers (low `tenure`) are more prone to churn.
+* **Fiber Optic** users show higher churn rates than DSL users.
 
 ---
 
-## ⚙️ Pipeline de Machine Learning
+## ⚙️ Machine Learning Pipeline
 
-O projeto seguiu um fluxo rigoroso de processamento de dados:
+The project followed a rigorous data processing workflow:
 
-1.  **Pré-processamento:**
-    * Tratamento de valores vazios em `TotalCharges`.
-    * Conversão da variável alvo (`Churn`) para binário (0/1).
-    * **Encoding:** Utilização de `Get Dummies` para variáveis categóricas.
-    * **Scaling:** Normalização de dados numéricos com `MinMaxScaler`.
-2.  **Modelagem:**
-    Foram testados diversos algoritmos, incluindo:
+1.  **Preprocessing:**
+    * Handling missing values in `TotalCharges`.
+    * Converting the target variable (`Churn`) to binary (0/1).
+    * **Encoding:** Used `Get Dummies` for categorical variables.
+    * **Scaling:** Normalization of numerical data using `MinMaxScaler`.
+2.  **Modeling:**
+    * Several algorithms were tested, including:
     * Logistic Regression
     * Decision Tree
     * Random Forest
-    * **Gradient Boosting (Modelo Escolhido)**
+    * **Gradient Boosting (Chosen Model)**
     * XGBoost / LGBM
 
 ---
 
-## 🏆 Resultados
+## 🏆 Results
 
-O modelo de **Gradient Boosting** apresentou a melhor performance geral, equilibrando a capacidade de generalização e a precisão na detecção dos cancelamentos.
+The **Gradient Boosting** model showed the best overall performance, balancing generalization capability and precision in detecting cancellations.
 
-### Matriz de Confusão
-Abaixo, a performance do modelo nos dados de teste:
+### Confusion Matrix
+Below is the model's performance on the test data:
 
-![Matriz de Confusão](assets/confusion_matrix.png)
+![Confusion Matrix](assets/confusion_matrix.png)
 
-| Métrica | Performance |
+| Metric | Performance |
 | :--- | :---: |
-| **Acurácia** | **~80%** |
-| **Precision** | **Alta** |
-| **Recall** | **Balanceado** |
+| **Accuracy** | **~80%** |
+| **Precision** | **High** |
+| **Recall** | **Balanced** |
 
-*O modelo demonstrou ser eficaz para segmentar a base de clientes e priorizar ações de marketing.*
+*The model proved effective for segmenting the customer base and prioritizing marketing actions.*
 
 ---
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-1.  **Clone o repositório:**
+1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/seu-usuario/telco-churn-analysis.git](https://github.com/seu-usuario/telco-churn-analysis.git)
+    git clone [https://github.com/alexanderbandeiralira/ChurnClassification-ML-Churn-Classification-using-Machine-Learning-](https://github.com/alexanderbandeiralira/ChurnClassification-ML-Churn-Classification-using-Machine-Learning-)
     ```
-2.  **Instale as dependências:**
+2.  **Install dependencies:**
     ```bash
     pip install pandas numpy scikit-learn seaborn matplotlib plotly xgboost lightgbm
     ```
-3.  **Execute o Notebook:**
-    Abra o arquivo `Churn_Analysis_Telco.ipynb` no Jupyter ou Google Colab.
+3.  **Run the Notebook:**
+    Open the `Churn_Analysis_Telco.ipynb` file in Jupyter or Google Colab.
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 **Alexander Lira**
 *Data Scientist | Machine Learning*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](SEU_LINK_DO_LINKEDIN)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alexanderblira/)
